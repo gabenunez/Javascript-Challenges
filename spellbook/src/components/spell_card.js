@@ -3,12 +3,13 @@ import { Row, Col,Card, CardText, CardBody,
         CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 class SpellCard extends Component {
-
+  
   state = {
     spellInfo: {}
   }
 
-  getSpellInfo = (spell) => {
+  getSpellInfo = () => {
+    const {spell} = this.props;
     fetch(spell.url)
       .then(res => res.json())
       .then(
@@ -51,7 +52,7 @@ class SpellCard extends Component {
 
             <Row>
               <Col lg='12'>
-                <Button color="secondary" onClick={() => this.getSpellInfo(spell)}>Learn More</Button> 
+                <Button color="secondary" onClick={() => this.getSpellInfo()}>Learn More</Button> 
               </Col>
               <Col lg='12'>
                 {!selectedSpells.includes(spell.name) ? (
