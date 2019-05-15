@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid Example</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+  <style>
+    h1 {
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .responsive-img {
+      width: 50px;
+    }
+    
+    header {
+      background-color: rgb(26, 26, 27);
+      border-bottom: 1px solid rgb(52, 53, 54);
+      padding: 5px;
+      color: white;
+
+      display: grid;
+      
+      gap: 20px;
+    }
+
+    @media (min-width: 700px) {
+      header {
+        grid-template-columns: 2fr 2fr 26fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+        grid-template-rows: 50px;
+      }
+
+      header > div:not(.logo) > span{
+        display: none;
+      }
+
+      header > div:not(.logo) > svg{
+        color: rgb(215, 218, 220);
+        display: inline;
+      }
+    }
+
+    header > div > span {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    header > div > *:first-child {
+      height: 100%;
+    }
+
+    header > div > input {
+      width: 99%;
+      max-height: 90%;
+    }
+
+    div.logo {
+      display: flex;
+      vertical-align: middle;
+      align-items: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+      <div class="logo">
+        <img class="responsive-img" src="logo.png" style="max-width:80px;">
+        <span>readit</span>
+      </div>
+      <div>
+        <select name="subreddits">
+          <option value="webdev">r/webdev</option>
+          <option value="gameofthrones">r/gameofthrones</option>
+          <option value="onetruegod">r/onetruegod</option>
+          <option value="iama">r/iama</option>
+        </select>
+      </div>
+      <div>
+        <input type="text" placeholder="Search">
+      </div>
+      <div>
+        <i class="fas fa-level-up-alt"></i> 
+        <span>Popular</span>
+      </div>
+      <div>
+        <i class="fas fa-chart-line"></i>
+        <span>All</span>
+      </div>
+      <div>
+        <i class="far fa-hand-spock"></i>
+        <span>Original Content</span>
+      </div>
+      <div>
+        <i class="fas fa-shield-alt"></i>
+        <span>Moderation</span>
+      </div>
+      <div>
+        <i class="fas fa-comments"></i>
+        <span>Chat</span>
+      </div>
+      <div>
+        <i class="far fa-envelope"></i>
+        <span>Messages</span>
+      </div>
+      <div>
+        <i class="fas fa-pencil-alt"></i>
+        <span>Create Post</span>
+      </div>
+      <div>
+        <select name="subreddits">
+          <option value="webdev">u/notu</option>
+          <option value="gameofthrones">settings</option>
+          <option value="onetruegod">logout</option>
+        </select>
+      </div>
+    </header>
+</body>
+</html>
